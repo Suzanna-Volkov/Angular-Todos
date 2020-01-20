@@ -29,13 +29,15 @@
 </div>
 
 <div class="task-buttons">
-  <label>
-    <input #todoTitle>
-  </label>
-  <button (click)='addTodo(todoTitle.value); todoTitle.value=""'>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Task..." #todoTitle>
+    </mat-form-field>
+  </form>
+  <button class="add-btn" mat-raised-button color="primary" (click)='addTodo(todoTitle.value); todoTitle.value=""'>
     Add
   </button>
-  <button (click)='cleanUp();'>
+  <button class="clean-up-btn" mat-raised-button color="warn" (click)='cleanUp();'>
     Clean up!
   </button>
 </div>

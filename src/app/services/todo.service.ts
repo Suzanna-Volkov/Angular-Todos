@@ -24,6 +24,7 @@ export class TodoService {
 
   // POST: add a new todo to the server
   addTodo(todo: Todo): Observable<Todo> {
+    todo.status = 'Todo';
     return this.http.post<Todo>(this.todosUrl, todo, this.httpOptions)
       .pipe(catchError(err => of(todo)));
   }

@@ -1,15 +1,39 @@
-<h2>
-    This is a list of the todos
-</h2>
-<label>
-    Todo:
+<h1>
+  Your todos!
+</h1>
+
+<div class="labels">
+    <p>
+        Todo / In progress / Done
+    </p>
+</div>
+
+<div *ngFor="let todo of todos" class="task">
+
+  <mat-card>
+    <mat-card-content>
+      <div class="task-text">
+        <p>
+          {{todo.title}}
+        </p>
+      </div>
+      <div class="task-radio-buttons">
+        <mat-radio-group>
+          <mat-radio-button value="Do"></mat-radio-button>
+          <mat-radio-button value="Doing"></mat-radio-button>
+          <mat-radio-button value="Done"></mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<div class="task-delete">
+  <label>
     <input #todoTitle>
-</label>
-<button (click)='addTodo(todoTitle.value); todoTitle.value=""'>
+  </label>
+  <button (click)='addTodo(todoTitle.value); todoTitle.value=""'>
     Add
-</button>
-<ul>
-    <li *ngFor="let todo of todos">
-        Task: {{todo.title}} Status: {{todo.status}}
-    </li>
-</ul>
+  </button>
+</div>

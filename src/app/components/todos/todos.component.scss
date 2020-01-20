@@ -1,0 +1,39 @@
+.labels {
+    text-align: end;
+    margin-bottom: 2rem;
+}
+
+.task {
+  display: flex;
+
+  .mat-card {
+      width: 100%;
+      margin-bottom: 2rem;
+
+    .mat-card-content {
+      display: flex;
+
+      .task-text {
+          width: 50%;
+
+          p {
+              font-size: large;
+          }
+      }
+
+      .task-radio-buttons {
+        width: 50%;
+        margin: auto;
+    }
+
+      .mat-radio-group {
+          float: right;
+
+        .mat-radio-button {
+            margin-left: 2rem;
+        }
+      }
+
+    }
+  }
+}

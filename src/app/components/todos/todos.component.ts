@@ -9,6 +9,7 @@ import { Todo } from '../../models/todo';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[];
+  status: string;
 
   constructor(private todoService: TodoService) {}
 

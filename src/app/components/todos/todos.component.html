@@ -1,0 +1,15 @@
+<h2>
+    This is a list of the todos
+</h2>
+<label>
+    Todo:
+    <input #todoTitle>
+</label>
+<button (click)='addTodo(todoTitle.value); todoTitle.value=""'>
+    Add
+</button>
+<ul>
+    <li *ngFor="let todo of todos">
+        Task: {{todo.title}} Status: {{todo.status}}
+    </li>
+</ul>

@@ -3,9 +3,9 @@
 </h1>
 
 <div class="labels">
-    <p>
-        Todo / In progress / Done
-    </p>
+  <p>
+    Todo / In progress / Done
+  </p>
 </div>
 
 <div *ngFor="let todo of todos" class="task">
@@ -18,22 +18,24 @@
         </p>
       </div>
       <div class="task-radio-buttons">
-        <mat-radio-group>
-          <mat-radio-button value="Do"></mat-radio-button>
-          <mat-radio-button value="Doing"></mat-radio-button>
+        <mat-radio-group [(ngModel)]="todo.status">
+          <mat-radio-button value="Todo"></mat-radio-button>
+          <mat-radio-button value="In progress"></mat-radio-button>
           <mat-radio-button value="Done"></mat-radio-button>
         </mat-radio-group>
       </div>
     </mat-card-content>
   </mat-card>
-
 </div>
 
-<div class="task-delete">
+<div class="task-buttons">
   <label>
     <input #todoTitle>
   </label>
   <button (click)='addTodo(todoTitle.value); todoTitle.value=""'>
     Add
+  </button>
+  <button (click)='cleanUp();'>
+    Clean up!
   </button>
 </div>

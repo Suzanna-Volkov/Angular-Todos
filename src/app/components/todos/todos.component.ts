@@ -18,12 +18,29 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todoService.getTodos().subscribe(todos => this.todos = todos);
+    this.todoService.getTodos().subscribe((todos) => (this.todos = todos));
   }
 
   addTodo(title: string): void {
     title = title.trim();
-    if (!title) { return; }
-    this.todoService.addTodo({ title } as Todo).subscribe(todo => { this.todos.push(todo); });
+    if (!title) {
+      return;
+    }
+    this.todoService.addTodo({ title } as Todo).subscribe((todo) => {
+      this.todos.push(todo);
+    });
+  }
+
+  deleteTodo(todo: Todo): void {
+    this.todos = this.todos.filter(t => t !== todo);
+    this.todoService.deleteTodo(todo).subscribe();
+  }
+
+  cleanUp(): void {
+    this.todos.forEach(todo => {
+      if (todo.status === 'Done') {
+        this.deleteTodo(todo);
+      }
+    });
   }
 }

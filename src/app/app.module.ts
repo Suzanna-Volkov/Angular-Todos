@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 import { InMemoryDataService } from '../app/services/in-memory-data.service';
 
@@ -36,6 +37,7 @@ import {MatRadioModule} from '@angular/material/radio';
     ),
     BrowserAnimationsModule,
     FlexLayoutModule,
+    FormsModule,
     MatToolbarModule,
     MatCardModule,
     MatRadioModule,

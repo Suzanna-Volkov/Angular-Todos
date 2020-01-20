@@ -27,4 +27,12 @@ export class TodoService {
     return this.http.post<Todo>(this.todosUrl, todo, this.httpOptions)
       .pipe(catchError(err => of(todo)));
   }
+
+  // DELETE: remove a todo from the server
+  deleteTodo(todo: Todo | number): Observable<Todo> {
+    const id = typeof todo === 'number' ? todo : todo.id;
+    const url = `${this.todosUrl}/${id}`;
+
+    return this.http.delete<Todo>(url, this.httpOptions);
+  }
 }
